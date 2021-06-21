@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"set": "cpp",
+		"unordered_set": "cpp",
+		"deque": "cpp",
+		"queue": "cpp"
+	}
+}
