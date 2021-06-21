@@ -1,10 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <map>
-#include <set>
 #include <unordered_map>
-
-using namespace std;
 
 int	FindConvMinSum(std::vector <int> & vec, int k) {
 	std::unordered_map <int, int> Set;
@@ -39,13 +35,13 @@ int	FindConvMinSum(std::vector <int> & vec, int k) {
 		}
 		++i;
 	}
-	std::cout << "\nAnswer is a " << min_sum << "!!!!\n";
+	std::cout << min_sum ;
 	return min_sum;
 }
 
 int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
+	std::ios_base::sync_with_stdio(false);
+	std::cin.tie(NULL);
 
 	int cnt_elems, vec_elems, k = 3;
 	// std::vector <int> vec;
