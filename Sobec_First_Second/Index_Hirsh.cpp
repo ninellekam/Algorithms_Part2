@@ -16,22 +16,18 @@
 // Порядковый номер этой публикации и будет равняться индексу Хирша.
 
 int hIndex(std::vector<int>& citations) {
-        sort(citations.begin(), citations.end());
-        size_t len = citations.size(), i = 0;
-        int answer = i;
+	std::unordered_map <int, int> buckets;
+	size_t len = citations.size(), sum = 0;
 
-	    for (i = 0; i < len; ++i) {
-		    if (citations[i] > i) {
-                break;
-            }
-            else {
-                answer = std::min<int>(i, citations[i]);
-            }
-	    }
-        if (i == len)
-            return answer;
-	    return i + 1;
-    }
+	for(size_t i = 0; i < len; ++i)
+		++buckets[min(citations[i], len)];
+
+	for(size_t i = len; i >= 0; --i) {
+		sum += buckets[i];
+		if (sum > i)
+			return i;
+	}
+}
 
 int main() {
 	std::vector <int> vec = {1, 3, 1};
