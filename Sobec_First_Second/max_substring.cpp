@@ -29,5 +29,5 @@ void MaxSubstring(std::string str) {
 }
 
 int main() {
-	MaxSubstring("abcAAAAjkloCCCCCCCCppppplllKKKKKKKKKKKKKKloikll");
+	MaxSubstring("aaabbbba");
 }
