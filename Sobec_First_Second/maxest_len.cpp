@@ -18,16 +18,14 @@ int	maxest(std::string &s) {
 	i = it;
 
 	while (i < len) {
-		if (s[i] == 'X') {
+		if (s[i] == 'X')
 			diff = abs(indx_y - i);
-			if (diff > max_dist)
-				max_dist = diff;
-		}
-		if (s[i] == 'Y') {
+
+		if (s[i] == 'Y')
 			diff = abs(indx_x - i);
-			if (diff > max_dist)
+
+		if (diff > max_dist)
 				max_dist = diff;
-		}
 		++i;
 	}
 	if (max_dist == 0)
@@ -36,6 +34,6 @@ int	maxest(std::string &s) {
 }
 
 int main() {
-	std::string s = "XOOOY";
+	std::string s = "XOOOCCCXY";
 	std::cout << maxest(s);
 }

@@ -25,6 +25,6 @@ std::string checkInclusion(std::string s1, std::string s2) {
 }
 
 int main() {
-	std::string s1 = "inan", s2 = "eiddsadkadknina";
+	std::string s1 = "inan", s2 = "eiddsadkadkninaooook";
 	std::cout << checkInclusion(s1, s2);
 }

@@ -23,11 +23,21 @@ void generateSubsets(vector<int>& nums , int ind, vector<int> &st,  vector<vecto
 		}
 	}
 
-vector<vector<int>> subsets(vector<int>& nums) {
-		vector<vector<int>> res;
+vector<vector<int> > subsets(vector<int>& nums) {
+		vector<vector<int> > res;
 		vector<int> st;
 
 		generateSubsets(nums, 0, st, res);
 
 		return res;
+}
+
+int main () {
+	std::vector <int > vec = {1, 2, 3};
+	std::vector <vector <int> > vec1 = subsets(vec);
+	for (auto it : vec1) {
+		for (auto in : it)
+			std::cout << in << " ";
+		std::cout << "\n";
+	}
 }

@@ -2,6 +2,7 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <unordered_map>
 
 
 // Индекс Хирша вычисляется по специальной формуле: он равен N, если N работ автора процитировали N и более раз.
@@ -20,13 +21,14 @@ int hIndex(std::vector<int>& citations) {
 	size_t len = citations.size(), sum = 0;
 
 	for(size_t i = 0; i < len; ++i)
-		++buckets[min(citations[i], len)];
+		++buckets[std::min<int>(citations[i], len)];
 
 	for(size_t i = len; i >= 0; --i) {
 		sum += buckets[i];
 		if (sum > i)
 			return i;
 	}
+	return 0;
 }
 
 int main() {

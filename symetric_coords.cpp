@@ -14,6 +14,7 @@ bool symetric_coords(std::vector<std::pair<double , double>> &vec) {
 	auto min_x = std::max_element(vec.begin(), vec.end(), [](std::pair<double , double> &a,
 						std::pair<double , double> &b) {return a.first > b.first;});
 	double centre = (min_x->first + max_x->first) / 2;
+	
 	for (int i = 0; i < n; ++i) {
 		if (vec[i].second != vec[n - i - 1].second)
 			return false;
