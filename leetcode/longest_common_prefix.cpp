@@ -14,8 +14,7 @@ string longestCommonPrefix(vector<string>& strs) {
         {
             for(j=0;j<prefix.length();j++)
             {
-                if(strs[i][j] != prefix[j])
-                {
+                if(strs[i][j] != prefix[j]) {
                     prefix.erase(j);
                 }
             }

@@ -2,6 +2,8 @@
 // другую заменой, удалением, добавлением 1 символа?
 
 #include <iostream>
+#include <algorithm>
+#include <stdlib.h>
 
 bool str_id_possible(std::string str1, std::string str2) {
 	size_t len1 = str1.size(), len2 = str2.size();
@@ -19,11 +21,17 @@ bool str_id_possible(std::string str1, std::string str2) {
 			return false;
 	}
 
-	return true;
+	if (count == 0 && delta != 0)
+		return true;
+
+	if (count <= 1 && delta == 0)
+		return true;
+
+	return false;
 }
 
 int main () {
-	bool ok = str_id_possible("OOOLLLLPPPJJJhhhnina", "OOOLLLLPJJJhhhnina");
+	bool ok = str_id_possible("cast", "casty");
 	if (ok == true)
 		std::cout << "YES" << "\n";
 	else

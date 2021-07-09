@@ -11,7 +11,8 @@ struct TreeNode {
 };
 
 TreeNode* sortedArrayToBST(std::vector<int>& nums) {
-		if(nums.empty()) return NULL;
+		if(nums.empty())
+			return NULL;
 
 		if(nums.size() == 1){
 			TreeNode* root = new TreeNode(nums[0]);
