@@ -19,11 +19,6 @@ int matrix(std::vector< std::vector<int> > & matrix) {
 	int index_one = rows, ans = INT_MAX, j = rows - 1;
 
 	for (int i = 0; i < rows; ++i) {
-		if (j == 0) {
-			std::cout << "\nANSWER ";
-			return j + 1;
-		}
-
 		while (matrix[i][j] != 0) {
 			if (j == 0) {
 				std::cout << "\nANSWER ";
@@ -39,6 +34,9 @@ int matrix(std::vector< std::vector<int> > & matrix) {
 }
 
 int main() {
-	std::vector< std::vector<int> > mat = {{0, 0, 0, 1}, {0, 0, 0, 1}, {0, 0, 0, 0}, {0, 0, 0, 0}};
+	std::vector< std::vector<int> > mat = {{0, 0, 0, 0},
+										   {0, 0, 0, 0},
+										   {1, 1, 1, 1},
+										   {0, 0, 1, 1}};
 	std::cout << matrix(mat);
 }

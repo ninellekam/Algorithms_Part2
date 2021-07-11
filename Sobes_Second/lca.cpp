@@ -31,11 +31,11 @@ node* lca(node *root, node *p, node *q) {
 
 	node * right = lca(root->right, p, q);
 
-	if(left==NULL && right==NULL)
+	if(left == NULL && right == NULL)
 		return NULL;
-	else if(left!=NULL && right==NULL)
+	else if(left != NULL && right == NULL)
 		return left;
-	else if(left==NULL && right!=NULL)
+	else if(left == NULL && right != NULL)
 		return right;
 
 	return root;

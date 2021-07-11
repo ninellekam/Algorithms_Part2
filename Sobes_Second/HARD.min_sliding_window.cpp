@@ -30,17 +30,6 @@ std::vector<int> minSlidingWindow(std::vector <int> & arr, int k) {
 
 			Q.push_back(i);
 		}
-		// for (auto it : Q)
-		// 	std::cout << it << " ";
-		// for (int j = 0; j < k; ++j) {
-		// 	while (!Q.empty() and arr[Q.front()] >= arr[i - k])
-		// 		Q.pop_front();
-
-		// 	while (!Q.empty() and arr[i] <= arr[Q.back()])
-		// 		Q.pop_back();
-
-		// 	Q.push_back(i);
-		// }
 
 		result.push_back(arr[Q.front()]);
 		return result;

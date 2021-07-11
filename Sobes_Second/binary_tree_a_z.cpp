@@ -23,10 +23,8 @@ int	answer_get(node *a, node *b, std::unordered_map<char, int> & hash, int &ans)
 	if (a == nullptr && b == nullptr)
 		return ans;
 
-	if ((a == nullptr || b == nullptr) {
-		ans = -1;
+	if (a == nullptr || b == nullptr)
 		return ans;
-	}
 
 	if (hash[a->value] < 0)
 		if (st.find(a->value) == st.end()) {
@@ -56,7 +54,6 @@ bool	eqvivalent(node *a, node *b) {
 	int ans = 0;
 	int res = answer_get(a, b, hash, ans);
 
-	// std::cout << " res " << res << " ";
 	if (res == hash.size())
 		return true;
 
@@ -66,14 +63,16 @@ bool	eqvivalent(node *a, node *b) {
 int main() {
 	node *root = new node('a');
 
+// left
 	root->left = new node('b');
+// right
 	root->right = new node('b');
-
-	root->left->left = new node('c');
-	root->left->right = new node('j');
-
-	root->right->left = new node('c');
-	root->right->right = new node('j');
+// left
+	root->left->left = new node('b');
+	root->left->right = new node('b');
+// right
+	root->right->left = new node('b');
+	// root->right->right = new node('b');
 
 	std::cout << eqvivalent(root->left, root->right);
 }
